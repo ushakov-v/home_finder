@@ -1,0 +1,9 @@
+<h1>Информация об объектах</h1>
+
+<p><strong>Название:</strong> <%= @apartment.title %></p>
+<p><strong>Описание:</strong> <%= @apartment.description %></p>
+<p><strong>Цена:</strong> <%= @apartment.price %></p>
+<p><strong>Местоположение:</strong> <%= @apartment.location %></p>
+
+<p><%= link_to 'Редактировать', edit_apartment_path(@apartment) %></p>
+<p><%= link_to 'Назад', apartments_path %></p>

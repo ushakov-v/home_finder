@@ -8,6 +8,12 @@ gem "pg", "~> 1.1"
 
 gem "devise"
 
+gem "rolify"
+
+gem "cancancan"
+
+gem "carrierwave"
+
 gem "bootsnap", require: false
 
 #front-end stack

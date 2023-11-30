@@ -16,6 +16,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :role %><br />
+        <%= f.text_field :role, value: resource.roles.first.name, readonly: true %>
+      </div>
+
+      <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
@@ -56,6 +61,8 @@
       <%= link_to 'Выйти', destroy_user_session_path, 'data-turbo-method': :delete %>
 
       <%= link_to "Назад", :back %>
+
+      <%= link_to 'Список квартир', apartments_path %>
     </div>
   </div>
 </div>

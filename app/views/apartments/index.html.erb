@@ -1,0 +1,29 @@
+<h1>Список объектов</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Цена</th>
+      <th>Местоположение</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr>
+        <td><%= apartment.title %></td>
+        <td><%= apartment.description %></td>
+        <td><%= apartment.price %></td>
+        <td><%= apartment.location %></td>
+        <td><%= link_to 'Просмотреть', apartment %></td>
+        <td><%= link_to 'Редактировать', edit_apartment_path(apartment) %></td>
+        <td><%= link_to 'Удалить', apartment, 'data-turbo-method': :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to 'Добавить объект', new_apartment_path %></p>

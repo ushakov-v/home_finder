@@ -8,6 +8,7 @@ ru:
         password: Пароль
         password_confirmation: Подтвердите пароль
         current_password: Текущий пароль
+        role: Войти как
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'

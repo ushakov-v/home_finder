@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_190316) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_14_132742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,28 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_190316) do
     t.bigint "user_id", null: false
     t.string "picture"
     t.index ["user_id"], name: "index_apartments_on_user_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "controllers", force: :cascade do |t|
+    t.string "cart"
+    t.string "show"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orderables", force: :cascade do |t|
+    t.bigint "apartment_id", null: false
+    t.bigint "cart_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["apartment_id"], name: "index_orderables_on_apartment_id"
+    t.index ["cart_id"], name: "index_orderables_on_cart_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -59,4 +81,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_190316) do
   end
 
   add_foreign_key "apartments", "users"
+  add_foreign_key "orderables", "apartments"
+  add_foreign_key "orderables", "carts"
 end

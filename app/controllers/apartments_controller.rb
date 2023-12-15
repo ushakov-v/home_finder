@@ -16,7 +16,6 @@ class ApartmentsController < ApplicationController
   
     def create
       @apartment = Apartment.new(apartment_params)
-      @apartment.picture = params[:apartment][:picture]
       @apartment.user = current_user
       
       if @apartment.save

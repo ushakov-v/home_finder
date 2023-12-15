@@ -1,0 +1,17 @@
+<% if current_page?(apartments_path) %>
+    <%= turbo_frame_tag "cart" do %>
+    <h1>Корзина</h1>
+    <% if @cart.orderables.count > 0 %>
+        <%= render "cart/orderables" %>
+        <p>Итого: ₽<%= @cart.total %></p>
+    <% else %>
+        <p>Ваша корзина пуста</p>
+    <% end %>
+    <% end %>
+<% else %>
+  <style>
+  .cart {
+    display: none;
+  }
+</style>
+<% end %>

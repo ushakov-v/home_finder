@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get '/contacts', to: 'contacts#show', as: 'contacts'
+  get 'errors/no_rights'
+  get 'users/show'
+  get '/about', to: 'pages#about'
+  get '/profile', to: 'users#show'
+  get 'cart', to: 'cart#show'
+  post 'cart/add'
+  post 'cart/remove'
   resources :apartments
   devise_for :users, controllers: {
     registrations: 'users/registrations'

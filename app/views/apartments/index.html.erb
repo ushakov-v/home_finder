@@ -21,6 +21,11 @@
         <td><%= link_to 'Просмотреть', apartment %></td>
         <td><%= link_to 'Редактировать', edit_apartment_path(apartment) %></td>
         <td><%= link_to 'Удалить', apartment, 'data-turbo-method': :delete, data: { confirm: 'Вы уверены?' } %></td>
+         <%= form_with(url: cart_add_path) do |f| %>
+      <td><%= f.hidden_field :id, value: apartment.id %>
+      <%= f.number_field :quantity, value: 0, min: 1 %>
+      <%= f.submit "Add To Cart" %></td>
+    <% end %> 
       </tr>
     <% end %>
   </tbody>

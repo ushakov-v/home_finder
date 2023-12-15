@@ -6,8 +6,6 @@ class User < ApplicationRecord
            :recoverable, :rememberable, :validatable
 
     has_many :apartments
-
-    mount_uploader :picture, PictureUploader
            
     validates :first_name, presence: true, length: { maximum: 100 }
     validates :last_name, presence: true, length: { maximum: 100 }

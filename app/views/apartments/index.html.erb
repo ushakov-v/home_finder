@@ -24,7 +24,7 @@
          <%= form_with(url: cart_add_path) do |f| %>
       <td><%= f.hidden_field :id, value: apartment.id %>
       <%= f.hidden_field :quantity, value: 1, min: 1 %>
-      <%= f.submit "Add To Cart" %></td>
+      <%= f.submit "Добавить в корзину" %></td>
     <% end %> 
       </tr>
     <% end %>

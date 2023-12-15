@@ -10,7 +10,7 @@
       <%= apartment.price %>
       <%= form_with(url: cart_add_path) do |f| %>
         <%= f.hidden_field :id, value: apartment.id %>
-        <%= f.submit "Добавить в корзину" %>
+        
       <% end %>
       <%= form_with(url: cart_remove_path) do |f| %>
         <%= f.hidden_field :id, value: orderable.id %>

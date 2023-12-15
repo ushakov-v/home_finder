@@ -1,7 +1,7 @@
 <h1>Корзина</h1>
 <% @cart.orderables.each do |orderable| %>
   <% apartment = orderable.apartment %>
-  <p><%= apartment.title %> * <%= orderable.quantity %> = $<%= apartment.price * orderable.quantity %></p>
+  <p><%= apartment.title %> * <%= orderable.quantity %> = ₽<%= apartment.price * orderable.quantity %></p>
 
        <%= render partial: "cart/cart" if @render_cart %>
 <% end %>
